@@ -9,9 +9,10 @@ echo " "
 dataset=Run2017D/SinglePhoton/RAW/v1
 GT=94X_dataRun2_v2
 reference=302635
-sqlite1=303573
-sqlite2=303835
-week=39
+sqlite1=$1
+sqlite2=$2
+week=$3
+year=$4
 nevents=500
 INSTALL=true
 RUN=true
