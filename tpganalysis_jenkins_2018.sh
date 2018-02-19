@@ -3,7 +3,7 @@
 
 echo "Running automated fast track validation script. Will compare ECAL trigger primitives rate difference for two different sets of conditions "
 echo "reference and test sqlite files"
-echo " "
+echo "usage: ./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
 
 ###############################
 dataset=Run2017D/SinglePhoton/RAW/v1
