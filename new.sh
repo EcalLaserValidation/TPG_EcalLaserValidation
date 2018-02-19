@@ -10,7 +10,7 @@ echo ToRun/$file
     sqlite2=`grep "run2" ToRun/$file | awk '{print $2}'`
 mv ToRun/$file RunFiles/.
 echo "./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
-#./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year 
+./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year 
 else
 echo "No new files"
 fi
