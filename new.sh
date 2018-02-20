@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash -ex
 file=`ls ToRun/`
 echo $file
 if [ -f ToRun/$file ]
