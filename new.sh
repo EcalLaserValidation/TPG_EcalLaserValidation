@@ -11,6 +11,8 @@ echo ToRun/$file
 mv ToRun/$file RunFiles/.
 echo "./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
 ./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year 
+git commit -a -m "clean ToRun files"
+git push
 else
 echo "No new files"
 fi
