@@ -16,14 +16,15 @@ git clone https://github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
 cd HLT_EcalLaserValidation
 cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
 git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
-git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
+#git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
 git push
-#cd ../TPG_EcalLaserValidation 
-#mv ToRun/$file RunFiles/.
+cd ../TPG_EcalLaserValidation 
+mv ToRun/$file RunFiles/.
+git commit -a -m "clean ToRun files"
+#git remote set-url origin ssh://git@github.com/EcalLaserValidation/TPG_EcalLaserValidation.git
+git push
 echo "./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
-#./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year 
-#git commit -a -m "clean ToRun files"
-#git push
+./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year
 else
 echo "No new files"
 fi
