@@ -13,7 +13,7 @@ sqlite1=$1
 sqlite2=$2
 week=$3
 year=$4
-nevents=500
+nevents=1000
 INSTALL=true
 RUN=true
 ###############################
@@ -52,21 +52,24 @@ if ${RUN}; then
 wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite1}_moved_to_1.db
 wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite2}_moved_to_1.db
 
-./runTPGbatchLC_jenkins_2018.sh jenkins $reference $dataset $GT $nevents $sqlite1 &
+#./runTPGbatchLC_jenkins_2018.sh jenkins $reference $dataset $GT $nevents $sqlite1 &
 ./runTPGbatchLC_jenkins_2018.sh jenkins $reference $dataset $GT $nevents $sqlite2 &
 wait
 fi
-cp addhist_jenkins_2018.sh log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite1}-batch/.
-pushd log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite1}-batch/
-./addhist_jenkins_2018.sh ${sqlite1} &
-popd
+#cp addhist_jenkins_2018.sh log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite1}-batch/.
+#pushd log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite1}-batch/
+#./addhist_jenkins_2018.sh ${sqlite1} &
+#popd
 cp addhist_jenkins_2018.sh log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite2}-batch/.
 pushd log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite2}-batch/
 ./addhist_jenkins_2018.sh ${sqlite2} &
 popd
 wait
 
-mv log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite1}-batch/newhistoTPG_${sqlite1}_eg12.root ../../TPGPlotting/plots/.
+#mv log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite1}-batch/newhistoTPG_${sqlite1}_eg12.root ../../TPGPlotting/plots/.
+
+wget http://cern.ch/ecaltrg/ReferenceNTuples/TPG/newhistoTPG_${sqlite1}_eg12.root  
+mv newhistoTPG_${sqlite1}_eg12.root ../../TPGPlotting/plots/.
 
 mv log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite2}-batch/newhistoTPG_${sqlite2}_eg12.root ../../TPGPlotting/plots/.
 
