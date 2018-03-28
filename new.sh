@@ -1,5 +1,5 @@
 #!/bin/bash -ex
-file=`ls ToRun/`
+file=`ls ToRun`
 echo $file
 if [ -f ToRun/$file ]
 then
@@ -33,7 +33,8 @@ git push
 
 ###TPG###
 cd ../TPG_EcalLaserValidation 
-mv ToRun/$file RunFiles/.
+cp ToRun/$file RunFiles/.
+rm ToRun/$file
 git commit -a -m "clean ToRun files"
 #git remote set-url origin ssh://git@github.com/EcalLaserValidation/TPG_EcalLaserValidation.git
 echo "./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
