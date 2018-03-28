@@ -8,6 +8,7 @@ echo "usage: ./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
 ###############################
 dataset=Run2017D/SinglePhoton/RAW/v1
 GT=94X_dataRun2_v2
+#GT=100X_dataRun2_v1
 reference=302635
 sqlite1=$1
 sqlite2=$2
