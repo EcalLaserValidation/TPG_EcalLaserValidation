@@ -1,5 +1,0 @@
-# IOV to be emulated and rates compared againt the old one's
-week 40
-year 2017
-run1 304204
-run2 304448
