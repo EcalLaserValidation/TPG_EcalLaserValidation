@@ -3,7 +3,7 @@
 
 echo "Running automated fast track validation script. Will compare ECAL trigger primitives rate difference for two different sets of conditions "
 echo "reference and test sqlite files"
-echo "usage: ./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
+echo "usage: ./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year $(getconf _NPROCESSORS_ONLN)"
 
 ###############################
 dataset=Run2017D/SinglePhoton/RAW/v1
@@ -59,11 +59,11 @@ fi
 eval `scram runtime -sh`
 cd EcalTPGAnalysis/Scripts/TriggerAnalysis
 if ${RUN}; then
-wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite1}_moved_to_1.db
+#wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite1}_moved_to_1.db
 wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite2}_moved_to_1.db
 
-#./runTPGbatchLC_jenkins_2018.sh jenkins $reference $dataset $GT $nevents $sqlite1 &
-./runTPGbatchLC_jenkins_2018.sh jenkins $reference $dataset $GT $nevents $sqlite2 &
+#./runTPGbatchLC_jenkins_2018.sh jenkins $reference $dataset $GT $nevents $sqlite1 $(getconf _NPROCESSORS_ONLN) &
+./runTPGbatchLC_jenkins_2018.sh jenkins $reference $dataset $GT $nevents $sqlite2 $(getconf _NPROCESSORS_ONLN) &
 wait
 fi
 #cp addhist_jenkins_2018.sh log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite1}-batch/.
