@@ -10,16 +10,16 @@ echo ToRun/$file
     sqlite2=`grep "run2" ToRun/$file | awk '{print $2}'`
 
 ###HLT###
-cd ..
+#cd ..
 rm -rf HLT_EcalLaserValidation
-git init
-git clone git@github.com:EcalLaserValidation/HLT_EcalLaserValidation.git
-#git clone ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
-cd HLT_EcalLaserValidation
-cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
-git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
-#git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
-git push
+#git init
+#git clone git@github.com:EcalLaserValidation/HLT_EcalLaserValidation.git
+##git clone ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
+#cd HLT_EcalLaserValidation
+#cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
+#git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
+##git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
+#git push
 
 ###L1T####
 #cd ..
