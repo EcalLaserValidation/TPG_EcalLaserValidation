@@ -20,7 +20,7 @@ cd HLT_EcalLaserValidation
 cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
 git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
 ##git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
-git push
+#git push
 
 ###L1T####
 cd ..
