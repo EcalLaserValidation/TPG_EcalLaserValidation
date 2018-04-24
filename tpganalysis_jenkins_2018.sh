@@ -85,5 +85,5 @@ mv log_and_results/${reference}-${datasetpath}-LC-IOV_${sqlite2}-batch/newhistoT
 
 cd ../../TPGPlotting/plots/
 
-./validationplots_jenkins_2018.sh $sqlite1 $sqlite2 $reference $week
+./validationplots_jenkins_2018.sh $sqlite1 $sqlite2 $reference $week ${datasetpath}
 
