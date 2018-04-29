@@ -24,15 +24,15 @@ git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
 git push
 
 ###L1T####
-cd ..
-rm -rf L1T_EcalLaserValidation
-git init
-git clone git@github.com:EcalLaserValidation/L1T_EcalLaserValidation.git
-cd L1T_EcalLaserValidation
-cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
-git add ToRun/NewToRun.txt
-git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
-git push
+# cd ..
+# rm -rf L1T_EcalLaserValidation
+# git init
+# git clone git@github.com:EcalLaserValidation/L1T_EcalLaserValidation.git
+# cd L1T_EcalLaserValidation
+# cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
+# git add ToRun/NewToRun.txt
+# git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
+# git push
 
 ###TPG###
 #cd ../TPG_EcalLaserValidation 
