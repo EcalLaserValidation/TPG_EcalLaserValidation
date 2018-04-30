@@ -1,5 +1,5 @@
-week 17
+week 18
 year 2018
 run1 315107
-run2 314900
-type pedestal
+run2 315420
+type laser
