@@ -11,28 +11,28 @@ echo ToRun/$file
     type=`grep "type" ToRun/$file | awk '{print $2}'`
 
 ###HLT###
-# cd ..
-# rm -rf HLT_EcalLaserValidation
-# git init
-# git clone git@github.com:EcalLaserValidation/HLT_EcalLaserValidation.git
-# ##git clone ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
-# cd HLT_EcalLaserValidation
-# cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
-# git add ToRun/NewToRun.txt
-# git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
-# ##git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
-# git push
-
-###L1T####
 cd ..
-rm -rf L1T_EcalLaserValidation
+rm -rf HLT_EcalLaserValidation
 git init
-git clone git@github.com:EcalLaserValidation/L1T_EcalLaserValidation.git
-cd L1T_EcalLaserValidation
+git clone git@github.com:EcalLaserValidation/HLT_EcalLaserValidation.git
+##git clone ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
+cd HLT_EcalLaserValidation
 cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
 git add ToRun/NewToRun.txt
 git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
+##git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
 git push
+
+###L1T####
+# cd ..
+# rm -rf L1T_EcalLaserValidation
+# git init
+# git clone git@github.com:EcalLaserValidation/L1T_EcalLaserValidation.git
+# cd L1T_EcalLaserValidation
+# cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
+# git add ToRun/NewToRun.txt
+# git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
+# git push
 
 # ###TPG###
 # cd ../TPG_EcalLaserValidation 
