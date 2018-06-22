@@ -7,7 +7,8 @@ echo "usage: ./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year $(getco
 
 ###############################
 #dataset=Run2017D/SinglePhoton/RAW/v1
-dataset=Run2018A/EGamma/RAW/v1
+#dataset=Run2018A/EGamma/RAW/v1
+dataset=Run2018A/ZeroBias/RAW/v1
 #GT=94X_dataRun2_v2
 #GT=100X_dataRun2_v1
 GT=101X_dataRun2_Prompt_v9
