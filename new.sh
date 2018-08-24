@@ -42,7 +42,7 @@ git push
 #git remote set-url origin ssh://git@github.com/EcalLaserValidation/TPG_EcalLaserValidation.git
 #echo "./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year"
 #./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year 
-#else
-#echo "No new files"
-#fi
-#git push
+else
+echo "No new files"
+fi
+git push
