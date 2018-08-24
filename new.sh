@@ -44,5 +44,5 @@ git push
 #./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year 
 #else
 #echo "No new files"
-#fi
-#git push
+fi
+git push
