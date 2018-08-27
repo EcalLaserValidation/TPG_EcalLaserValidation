@@ -1,0 +1,5 @@
+week 35
+year 2018
+run1 321480
+run2 321855
+type pedestal
