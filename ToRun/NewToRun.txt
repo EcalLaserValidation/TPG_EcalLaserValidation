@@ -1,4 +1,3 @@
-#New try
 week 34
 year 2018
 run1 321504
