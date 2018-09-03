@@ -1,5 +1,5 @@
 week 36
 year 2018
-run1 321855
-run2 322151
-type pedestal
+run1 321972
+run2 322179
+type laser
