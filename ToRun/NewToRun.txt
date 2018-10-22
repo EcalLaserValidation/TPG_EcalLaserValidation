@@ -1,4 +1,3 @@
-# Another try
 week 43
 year 2018
 run1 324841
