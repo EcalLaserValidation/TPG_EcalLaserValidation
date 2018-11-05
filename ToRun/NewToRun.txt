@@ -1,5 +1,5 @@
 week 45
 year 2018
-run1 325909
-run2 326038
-type pedestal
+run1 325899
+run2 326151
+type laser
