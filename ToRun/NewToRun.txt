@@ -1,5 +1,5 @@
 week 48
 year 2018
-run1 326979
-run2 327271
-type pedestal
+run1 327114
+run2 327325
+type laser
