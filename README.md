@@ -2,7 +2,7 @@
 
 CMS-ECAL_TPGAnalysis (9_4_0_pre3)
 
-## This houses scripts to run the ECALTPGAnalysis of CMS with jenkins jobs 
+## This repository houses scripts to run the ECALTPGAnalysis of CMS with jenkins jobs 
 ## It runs on Jenkins in order to validate the ECAL conditions (laser corrections, pedestals...)
 
 ## To trigger the running new.sh is included in the jenkins system cron jobs
@@ -26,8 +26,7 @@ run2 304204 =sqlite2
 ./tpganalysis_jenkins_2018.sh $sqlite1 $sqlite2 $week $year 
 
 ## ======================================================================================================================
-## THE FOLLOWING DESCRIBES THE STEPS BUT DOES NOT NEED TO BE DONE MANUALLY, ALL DONE BY THE PREVIOUS SCRIPT
-
+## THE FOLLOWING DESCRIBES THE STEPS BUT DOES NOT NEED TO BE DONE MANUALLY, ALL DONE BY THE ABOVE SCRIPT
 # tpganalysis_jenkins_2018.sh runs scripts housed and updated here:
 https://gitlab.cern.ch/ECALPFG/EcalTPGAnalysis/tree/tpganalysis_jenkins
 
