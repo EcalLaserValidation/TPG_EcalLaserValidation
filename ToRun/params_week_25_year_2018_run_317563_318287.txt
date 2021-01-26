@@ -1,5 +1,0 @@
-week 25
-year 2018
-run1 317563
-run2 318287
-type laser
