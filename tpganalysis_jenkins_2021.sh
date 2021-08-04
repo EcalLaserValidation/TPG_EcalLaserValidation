@@ -14,9 +14,9 @@ sqlite2=$2
 week=$3
 year=$4
 #nevents=1000
-nevents=10
-INSTALL=false
-RUN=false
+nevents=1000
+INSTALL=true
+RUN=true
 ###############################
 
 datasetpath=`echo ${dataset} | tr '/' '_'`
