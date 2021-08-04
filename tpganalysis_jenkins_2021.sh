@@ -43,7 +43,8 @@ git clone https://github.com/cms-l1t-offline/L1Trigger-L1TCalorimeter.git L1Trig
 git cms-checkdeps -A -a
 
 scram b -j $(getconf _NPROCESSORS_ONLN)
-git clone --depth 1 -b main https://github.com/CMS-ECAL-Trigger-Group/EcalTPGAnalysis.git
+#git clone --depth 1 -b main https://github.com/CMS-ECAL-Trigger-Group/EcalTPGAnalysis.git
+git clone --depth 1 -b main git@github.com:CMS-ECAL-Trigger-Group/EcalTPGAnalysis.git
 export USER_CXXFLAGS="-Wno-delete-non-virtual-dtor -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=sign-compare -Wno-error=reorder"
 scram b -j $(getconf _NPROCESSORS_ONLN)
 else
