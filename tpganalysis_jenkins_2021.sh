@@ -53,28 +53,28 @@ fi
 eval `scram runtime -sh`
 cd EcalTPGAnalysis/Scripts/TriggerAnalysis
 if ${RUN}; then
-wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite1}_moved_to_1.db
+#wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite1}_moved_to_1.db
 wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite2}_moved_to_1.db
 
-./runTPGbatchLC_jenkins_2021.sh jenkins $reference $dataset $GT $nevents $sqlite1 $(getconf _NPROCESSORS_ONLN) &
-wait
+#./runTPGbatchLC_jenkins_2021.sh jenkins $reference $dataset $GT $nevents $sqlite1 $(getconf _NPROCESSORS_ONLN) &
+#wait
 ./runTPGbatchLC_jenkins_2021.sh jenkins $reference $dataset $GT $nevents $sqlite2 $(getconf _NPROCESSORS_ONLN) &
 wait
 fi
-cp addhist_jenkins_2021.sh log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/.
-pushd log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/
-./addhist_jenkins_2021.sh ${sqlite1} &
-popd
+#cp addhist_jenkins_2021.sh log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/.
+#pushd log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/
+#./addhist_jenkins_2021.sh ${sqlite1} &
+#popd
 cp addhist_jenkins_2021.sh log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite2}_batch/.
 pushd log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite2}_batch/
 ./addhist_jenkins_2021.sh ${sqlite2} &
 popd
 wait
 
-mv log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/newhistoTPG_${sqlite1}.root ../../TPGPlotting/plots/.
+#mv log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/newhistoTPG_${sqlite1}.root ../../TPGPlotting/plots/.
 
-#wget http://cern.ch/ecaltrg/ReferenceNTuples/TPG/newhistoTPG_${sqlite1}.root  
-#mv newhistoTPG_${sqlite1}.root ../../TPGPlotting/plots/.
+wget http://cern.ch/ecaltrg/ReferenceNTuples/TPG/newhistoTPG_${sqlite1}.root  
+mv newhistoTPG_${sqlite1}.root ../../TPGPlotting/plots/.
 
 mv log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite2}_batch/newhistoTPG_${sqlite2}.root ../../TPGPlotting/plots/.
 
