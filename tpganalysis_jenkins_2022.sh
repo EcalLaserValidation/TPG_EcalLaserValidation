@@ -3,7 +3,7 @@
 
 echo "Running automated fast track validation script. Will compare ECAL trigger primitives rate difference for two different sets of conditions "
 echo "reference and test sqlite files"
-echo "usage: ./tpganalysis_jenkins_2021.sh $sqlite1 $sqlite2 $week $year $(getconf _NPROCESSORS_ONLN)"
+echo "usage: ./tpganalysis_jenkins_2022.sh $sqlite1 $sqlite2 $week $year $(getconf _NPROCESSORS_ONLN)"
 
 ###############################
 dataset=Run2018C/ZeroBias/RAW
