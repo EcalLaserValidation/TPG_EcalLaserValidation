@@ -24,7 +24,7 @@ datasetpath=`echo ${dataset} | tr '/' '_'`
 
 export CMSREL=CMSSW_12_3_0_pre6
 export RELNAME=TPLasVal_1230pre6
-export SCRAM_ARCH=slc7_amd64_gcc900
+export SCRAM_ARCH=slc7_amd64_gcc10
 
 if ${INSTALL}; then
 scram p -n $RELNAME CMSSW $CMSREL
