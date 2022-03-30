@@ -7,7 +7,7 @@ echo "usage: ./tpganalysis_jenkins_2022.sh $sqlite1 $sqlite2 $week $year $(getco
 
 ###############################
 dataset=Run2018C/ZeroBias/RAW
-GT=112X_dataRun2_v9
+GT=123X_dataRun2_v1
 reference=320040
 sqlite1=$1
 sqlite2=$2
@@ -22,8 +22,8 @@ RUN=true
 datasetpath=`echo ${dataset} | tr '/' '_'`
 
 
-export CMSREL=CMSSW_11_2_0
-export RELNAME=TPLasVal_1120
+export CMSREL=CMSSW_12_3_0_pre6
+export RELNAME=TPLasVal_1230pre6
 export SCRAM_ARCH=slc7_amd64_gcc900
 
 if ${INSTALL}; then
@@ -33,13 +33,10 @@ eval `scram runtime -sh`
 
 git cms-init
 git remote add cms-l1t-offline git@github.com:cms-l1t-offline/cmssw.git
-git fetch cms-l1t-offline l1t-integration-CMSSW_11_2_0
-git cms-merge-topic -u cms-l1t-offline:l1t-integration-v105.13
-git cms-addpkg L1Trigger/Configuration
-git cms-addpkg L1Trigger/L1TMuon
-git clone https://github.com/cms-l1t-offline/L1Trigger-L1TMuon.git L1Trigger/L1TMuon/data
-git cms-addpkg L1Trigger/L1TCalorimeter
+git fetch cms-l1t-offline l1t-integration-CMSSW_12_3_0_pre6
+git cms-merge-topic -u cms-l1t-offline:l1t-integration-v121.0-CMSSW_12_3_0_pre6
 git clone https://github.com/cms-l1t-offline/L1Trigger-L1TCalorimeter.git L1Trigger/L1TCalorimeter/data
+
 git cms-checkdeps -A -a
 
 scram b -j $(getconf _NPROCESSORS_ONLN)
