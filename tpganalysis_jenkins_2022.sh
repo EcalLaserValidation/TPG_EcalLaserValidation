@@ -2,7 +2,7 @@
 #Jenkins script for TPGAnalysis and ECAL conditions' validation
 
 echo "Running automated fast track validation script. Will compare ECAL trigger primitives rate difference for two different sets of conditions "
-echo "reference and test sqlite files"
+echo "reference and test sqlite files:$sqlite1 $sqlite2"
 echo "usage: ./tpganalysis_jenkins_2022.sh $sqlite1 $sqlite2 $week $year $(getconf _NPROCESSORS_ONLN)"
 
 ###############################
