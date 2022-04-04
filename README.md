@@ -11,7 +11,7 @@ CMS-ECAL_TPGAnalysis (9_4_0_pre3)
 ## To modify ToRun/NewtoRun.txt anywhere, do:
 
 ```bash
-git clone https://github.com/EcalLaserValidation/TPG_EcalLaserValidation.git
+git clone git@github.com:EcalLaserValidation/TPG_EcalLaserValidation.git
 ```
 ## edit ToRun/NewtoRun.txt with new conditions
 week 40
