@@ -1,5 +1,5 @@
-week 16
+week 16 
 year 2022
-run1 350492
-run2 350561
-type laser
+run1 349295
+run2 350567
+type pedestal
