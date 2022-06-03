@@ -1,0 +1,5 @@
+week 22
+year 2022
+run1 352907
+run2 352992
+type laser
