@@ -70,7 +70,19 @@ wait
 
 #mv log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/newhistoTPG_${sqlite1}.root ../../TPGPlotting/plots/.
 
-wget http://cern.ch/ecaltrg/ReferenceNTuples/TPG/newhistoTPG_${sqlite1}.root  
+if [[ `wget -S --spider https://cmssdt.cern.ch/SDT/public/EcalLaserValidation/TPG_EcalLaserValidation/TPGAnalysis_${year}_${week}_${sqlite1}_${sqlite2}/TPGAnalysis/${year}/tpg_validationplots/week_${week}/run_${sqlite1}_${sqlite2}_ref_${reference}/newhistoTPG_${sqlite1}.root 2>&1 | grep 'HTTP/1.1 200 OK'` ]]
+	then 
+    	wget https://cmssdt.cern.ch/SDT/public/EcalLaserValidation/TPG_EcalLaserValidation/TPGAnalysis_${year}_${week}_${sqlite1}_${sqlite2}/TPGAnalysis/${year}/tpg_validationplots/week_${week}/run_${sqlite1}_${sqlite2}_ref_${reference}/newhistoTPG_${sqlite1}.root
+	else
+		if [[ `wget -S --spider https://ecaltrg.web.cern.ch/ecaltrg/TPG/ReferenceNTuples/newhistoTPG_${sqlite1}.root  2>&1 | grep 'HTTP/1.1 200 OK'` ]]
+		then
+		wget https://cern.ch/ecaltrg/ReferenceNTuples/TPG/newhistoTPG_${sqlite1}.root  
+		else
+   		#cp output_ref_349295_pedestal.log output_ref_${1}_${3}.log
+    		mail -s "TPG_validation failed to find reference ${sqlite1} running jenkins" ecaltrg@cern.ch <<< "TPG_validation failed to find reference ${sqlite1}"
+		fi
+fi
+
 mv newhistoTPG_${sqlite1}.root ../../TPGPlotting/plots/.
 
 mv log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite2}_batch/newhistoTPG_${sqlite2}.root ../../TPGPlotting/plots/.
