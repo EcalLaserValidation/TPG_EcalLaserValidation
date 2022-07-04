@@ -1,5 +1,0 @@
-week 27
-year 2022
-run1 355047
-run2 355052
-type laser
