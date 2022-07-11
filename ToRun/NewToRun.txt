@@ -1,5 +1,5 @@
-week 28 
+week 27 
 year 2022
-run1 355245
-run2 
+run1 354058
+run2 355245
 type pedestal
