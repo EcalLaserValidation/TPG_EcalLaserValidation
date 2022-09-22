@@ -1,0 +1,5 @@
+week 38 
+year 2022
+run1 358171
+run2 359126
+type pedestal
