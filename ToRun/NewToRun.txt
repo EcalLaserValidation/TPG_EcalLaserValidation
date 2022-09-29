@@ -1,5 +1,5 @@
-week 39 
+week 39
 year 2022
-run1 358171
-run2 359428
-type pedestal
+run1 358575
+run2 359575
+type laser
