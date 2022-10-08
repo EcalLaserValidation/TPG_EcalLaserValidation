@@ -19,7 +19,7 @@ git clone git@github.com:EcalLaserValidation/HLT_EcalLaserValidation.git
 cd HLT_EcalLaserValidation
 cp ../TPG_EcalLaserValidation/ToRun/$file ToRun/NewToRun.txt
 git add ToRun/NewToRun.txt
-git commit -a -m "update ToRun files: trigger a new validation for IoV=$sqlite2"
+git commit -a -m "update ToRun files: trigger a rerun due to Jenkins fail new validation for IoV=$sqlite2"
 ##git remote set-url origin ssh://git@github.com/EcalLaserValidation/HLT_EcalLaserValidation.git
 git push
 
