@@ -1,0 +1,5 @@
+week 46 
+year 2022
+run1 361648
+run2 362012
+type pedestal
