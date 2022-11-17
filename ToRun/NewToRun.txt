@@ -1,0 +1,5 @@
+week 46
+year 2022
+run1 362148
+run2 362166
+type laser
