@@ -2,4 +2,4 @@ week 11
 year 2023
 run1 362759
 run2 364728
-type laser
+type lase
