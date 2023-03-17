@@ -6,7 +6,7 @@ echo "reference and test sqlite files"
 echo "usage: ./tpganalysis_jenkins_2023.sh $sqlite1 $sqlite2 $week $year $(getconf _NPROCESSORS_ONLN)"
 
 ###############################
-dataset=Run2018C/ZeroBias/RAW
+dataset=Run2022G-v1/ZeroBias/RAW
 GT=130X_dataRun3_Prompt_v1
 reference=320040
 sqlite1=$1
@@ -16,7 +16,7 @@ year=$4
 #nevents=1000
 nevents=1000
 INSTALL=true
-RUN=false
+RUN=true
 ###############################
 
 datasetpath=`echo ${dataset} | tr '/' '_'`
@@ -57,7 +57,7 @@ wget http://cern.ch/ecaltrg/EcalLin/EcalTPG_${sqlite2}_moved_to_1.db
 #wait
 ./runTPGbatchLC_jenkins_2023.sh jenkins $reference $dataset $GT $nevents $sqlite2 $(getconf _NPROCESSORS_ONLN) &
 wait
-#fi
+fi
 #cp addhist_jenkins_2023.sh log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/.
 #pushd log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite1}_batch/
 #./addhist_jenkins_2023.sh ${sqlite1} &
@@ -90,4 +90,4 @@ mv log_and_results/${reference}_${datasetpath}_LC_IOV_${sqlite2}_batch/newhistoT
 cd ../../TPGPlotting/plots/
 
 ./validationplots_jenkins_2023.sh $sqlite1 $sqlite2 $reference $week $year
-fi
+
