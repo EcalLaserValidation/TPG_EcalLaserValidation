@@ -8,7 +8,7 @@ echo "usage: ./tpganalysis_jenkins_2023.sh $sqlite1 $sqlite2 $week $year $(getco
 ###############################
 dataset=Run2022G-v1/ZeroBias/RAW
 GT=130X_dataRun3_Prompt_v1
-reference=320040
+reference=362760
 sqlite1=$1
 sqlite2=$2
 week=$3
