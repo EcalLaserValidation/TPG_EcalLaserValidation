@@ -2,4 +2,4 @@ week 18
 year 2023
 run1 367095
 run2 367100
-type laser
+type lase
