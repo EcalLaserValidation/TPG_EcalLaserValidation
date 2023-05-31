@@ -6,10 +6,13 @@ echo "reference and test sqlite files"
 echo "usage: ./tpganalysis_jenkins_2023.sh $sqlite1 $sqlite2 $week $year $(getconf _NPROCESSORS_ONLN)"
 
 ###############################
-dataset=Run2022F-v1/ZeroBias/RAW
+dataset=Run2023C-v1/ZeroBias/RAW
+#dataset=Run2022F-v1/ZeroBias/RAW
 #dataset=Run2022G-v1/ZeroBias/RAW
-GT=130X_dataRun3_Prompt_v1
-reference=361957
+GT=130X_dataRun3_Prompt_v3
+#GT=130X_dataRun3_Prompt_v1
+reference=367758
+#reference=361957 #2022F
 #reference=362760
 sqlite1=$1
 sqlite2=$2
@@ -24,8 +27,10 @@ RUN=true
 datasetpath=`echo ${dataset} | tr '/' '_'`
 
 
-export CMSREL=CMSSW_13_0_0_pre4
-export RELNAME=TPLasVal_1300pre4
+#export CMSREL=CMSSW_13_0_0_pre4
+export CMSREL=CMSSW_13_1_0_pre4
+#export RELNAME=TPLasVal_1300pre4
+export RELNAME=TPLasVal_1310pre4
 export SCRAM_ARCH=slc7_amd64_gcc11
 
 if ${INSTALL}; then
@@ -35,8 +40,10 @@ eval `scram runtime -sh`
 
 git cms-init
 git remote add cms-l1t-offline git@github.com:cms-l1t-offline/cmssw.git
-git fetch cms-l1t-offline l1t-integration-CMSSW_13_0_0_pre4
-git cms-merge-topic -u cms-l1t-offline:l1t-integration-v147
+#git fetch cms-l1t-offline l1t-integration-CMSSW_13_0_0_pre4
+#git cms-merge-topic -u cms-l1t-offline:l1t-integration-v147
+git fetch cms-l1t-offline l1t-integration-CMSSW_13_1_0_pre4
+git cms-merge-topic -u cms-l1t-offline:l1t-integration-v156
 git clone https://github.com/cms-l1t-offline/L1Trigger-L1TCalorimeter.git L1Trigger/L1TCalorimeter/data
 
 git cms-checkdeps -A -a
