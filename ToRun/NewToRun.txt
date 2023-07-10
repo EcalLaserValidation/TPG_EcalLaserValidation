@@ -1,0 +1,5 @@
+week 28 
+year 2023
+run1 370037
+run2 370366
+type pedestal
