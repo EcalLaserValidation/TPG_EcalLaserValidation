@@ -1,5 +1,5 @@
-week 9 
+week 10 
 year 2023
-run1 375600
-run2 377134
+run1 377134
+run2 377348
 type pedestal
