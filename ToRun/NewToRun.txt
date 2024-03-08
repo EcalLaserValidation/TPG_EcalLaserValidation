@@ -2,4 +2,4 @@ week 10
 year 2024
 run1 375823
 run2 377539
-type laser
+type lase
