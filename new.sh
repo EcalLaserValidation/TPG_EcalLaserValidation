@@ -40,8 +40,8 @@ cp ToRun/$file RunFiles/.
 rm ToRun/$file
 git commit -a -m "clean ToRun files"
 git remote set-url origin ssh://git@github.com/EcalLaserValidation/TPG_EcalLaserValidation.git
-echo "./tpganalysis_jenkins_2023.sh $sqlite1 $sqlite2 $week $year"
-./tpganalysis_jenkins_2023.sh $sqlite1 $sqlite2 $week $year 
+echo "./tpganalysis_jenkins_2024.sh $sqlite1 $sqlite2 $week $year"
+./tpganalysis_jenkins_2024.sh $sqlite1 $sqlite2 $week $year 
 else
 echo "No new files"
 fi
