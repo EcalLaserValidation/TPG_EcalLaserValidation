@@ -45,7 +45,7 @@ scram b -j $(getconf _NPROCESSORS_ONLN)
 git clone --depth 1 -b main git@github.com:CMS-ECAL-Trigger-Group/EcalTPGAnalysis.git
 export USER_CXXFLAGS="-Wno-delete-non-virtual-dtor -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=sign-compare -Wno-error=reorder"
 scram b -j $(getconf _NPROCESSORS_ONLN)
-cp runListFiles_${reference}_path.txt $RELNAME/src/EcalTPGAnalysis/Scripts/TriggerAnalysis/.
+cp ../../runListFiles_${reference}_path.txt EcalTPGAnalysis/Scripts/TriggerAnalysis/.
 else
 cd $RELNAME/src
 fi
