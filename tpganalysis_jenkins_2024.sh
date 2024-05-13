@@ -6,14 +6,10 @@ echo "reference and test sqlite files"
 echo "usage: ./tpganalysis_jenkins_2024.sh $sqlite1 $sqlite2 $week $year $(getconf _NPROCESSORS_ONLN)"
 
 ###############################
-dataset=Run2023C-v1/ZeroBias/RAW
-#dataset=Run2022F-v1/ZeroBias/RAW
-#dataset=Run2022G-v1/ZeroBias/RAW
-GT=130X_dataRun3_Prompt_v3
-#GT=130X_dataRun3_Prompt_v1
-reference=367758
-#reference=361957 #2022F
-#reference=362760
+dataset=Run2024D-v1/ZeroBias/RAW
+GT=140X_dataRun3_Prompt_v2
+#GT=130X_dataRun3_Prompt_v3
+reference=380446
 sqlite1=$1
 sqlite2=$2
 week=$3
@@ -27,11 +23,12 @@ RUN=true
 datasetpath=`echo ${dataset} | tr '/' '_'`
 
 
-#export CMSREL=CMSSW_13_0_0_pre4
-export CMSREL=CMSSW_13_1_0_pre4
-#export RELNAME=TPLasVal_1300pre4
-export RELNAME=TPLasVal_1310pre4
-export SCRAM_ARCH=slc7_amd64_gcc11
+#export CMSREL=CMSSW_13_1_0_pre4
+export CMSREL=CMSSW_14_0_6
+#export RELNAME=TPLasVal_1310pre4
+export RELNAME=TPLasVal_1406
+#export SCRAM_ARCH=slc7_amd64_gcc11
+export SCRAM_ARCH=el8_amd64_gcc12
 
 if ${INSTALL}; then
 scram p -n $RELNAME CMSSW $CMSREL
@@ -39,11 +36,6 @@ cd $RELNAME/src
 eval `scram runtime -sh`
 
 git cms-init
-git remote add cms-l1t-offline git@github.com:cms-l1t-offline/cmssw.git
-#git fetch cms-l1t-offline l1t-integration-CMSSW_13_0_0_pre4
-#git cms-merge-topic -u cms-l1t-offline:l1t-integration-v147
-git fetch cms-l1t-offline l1t-integration-CMSSW_13_1_0_pre4
-git cms-merge-topic -u cms-l1t-offline:l1t-integration-v156
 git clone https://github.com/cms-l1t-offline/L1Trigger-L1TCalorimeter.git L1Trigger/L1TCalorimeter/data
 
 git cms-checkdeps -A -a
@@ -53,6 +45,7 @@ scram b -j $(getconf _NPROCESSORS_ONLN)
 git clone --depth 1 -b main git@github.com:CMS-ECAL-Trigger-Group/EcalTPGAnalysis.git
 export USER_CXXFLAGS="-Wno-delete-non-virtual-dtor -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=sign-compare -Wno-error=reorder"
 scram b -j $(getconf _NPROCESSORS_ONLN)
+cp runListFiles_$reference_path.txt $RELNAME/src/EcalTPGAnalysis/Scripts/TriggerAnalysis/.
 else
 cd $RELNAME/src
 fi
