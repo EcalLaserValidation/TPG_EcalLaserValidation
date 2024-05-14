@@ -37,7 +37,8 @@ eval `scram runtime -sh`
 
 git cms-init
 git clone https://github.com/cms-l1t-offline/L1Trigger-L1TCalorimeter.git L1Trigger/L1TCalorimeter/data
-
+sed 's/+l1UpgradeTfMuonTree/#+l1UpgradeTfMuonTree/g' L1Trigger/L1TNtuples/python/L1NtupleRAW_cff.py
+sed 's/+l1TauRecoTree/#+l1TauRecoTree/g' L1Trigger/L1TNtuples/python/L1Ntuple/L1NtupleAOD_cff.py
 git cms-checkdeps -A -a
 
 scram b -j $(getconf _NPROCESSORS_ONLN)
