@@ -36,7 +36,8 @@ cd $RELNAME/src
 eval `scram runtime -sh`
 
 git cms-init
-git cms-addpkg L1Trigger/L1TNtuples/python
+git cms-addpkg L1Trigger/L1TNtuples
+git cms-addpkg L1Trigger/L1TCalorimeter
 git clone https://github.com/cms-l1t-offline/L1Trigger-L1TCalorimeter.git L1Trigger/L1TCalorimeter/data 
 
 sed 's/+l1UpgradeTfMuonTree/#+l1UpgradeTfMuonTree/g' L1Trigger/L1TNtuples/python/L1NtupleRAW_cff.py
