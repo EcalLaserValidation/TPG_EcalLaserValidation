@@ -2,4 +2,4 @@ week 13
 year 2025
 run1 388784
 run2 389987
-type laser
+type lase
