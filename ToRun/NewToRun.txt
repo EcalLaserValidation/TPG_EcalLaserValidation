@@ -1,0 +1,5 @@
+week 48 
+year 2025
+run1 399872
+run2 399954
+type pedestal
