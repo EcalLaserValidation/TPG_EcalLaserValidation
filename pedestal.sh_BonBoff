@@ -1,0 +1,29 @@
+#usage ./pedestal.sh 
+week=`date +%W`
+pweek=$(($week-1))
+#pweek=$(($week-3))
+dir_pedes=../../public/ECAL/PEDES_2023
+new=`awk '{print $1}' ${dir_pedes}/in_${week}_prompt.txt`
+old=`awk '{print $1}' ${dir_pedes}/in_${pweek}_prompt.txt`
+
+#week=13
+old=372735    # Bon
+new=371866    # Boff
+
+if [ -f /eos/project/e/ecaltrg/www/DBPedestals/Pedes_${new}.db ]; then rm /eos/project/e/ecaltrg/www/DBPedestals/Pedes_${new}.db;fi
+
+cp ${dir_pedes}/Pedes_${new}.db /eos/project/e/ecaltrg/www/DBPedestals/.
+
+git pull
+cp ToRun/NewToRun_pedestal.txt ToRun/NewToRun.txt
+sed -e "s/sqlite1/$old/g"  ToRun/NewToRun_pedestal.txt > ToRun/NewToRun.txt
+sed -e "s/sqlite2/$new/g"  -i ToRun/NewToRun.txt
+sed -e "s/ww/$week/g"  -i ToRun/NewToRun.txt
+
+cp new_pedestal.sh new.sh
+
+git add ToRun/NewToRun.txt
+git commit -a -m "validate pedestal $new/$old"
+
+git push
+
