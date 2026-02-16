@@ -17,7 +17,7 @@ if [ -f /eos/project/e/ecaltrg/www/DBPedestals/Pedes_${new}.db ]; then rm /eos/p
 cp ${dir_pedes}/Pedes_${new}.db /eos/project/e/ecaltrg/www/DBPedestals/.
 
 git pull
-cp ToRun_archives/NewToRun_pedestal.txt ToRun/NewToRun.txt
+cp ToRun/NewToRun_pedestal.txt ToRun/NewToRun.txt
 sed -e "s/sqlite1/$old/g"  ToRun/NewToRun_pedestal.txt > ToRun/NewToRun.txt
 sed -e "s/sqlite2/$new/g"  -i ToRun/NewToRun.txt
 sed -e "s/ww/$week/g"  -i ToRun/NewToRun.txt
