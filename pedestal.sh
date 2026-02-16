@@ -9,8 +9,8 @@ new=`awk '{print $1}' ${dir_pedes}/in_${week}_prompt.txt`
 old=`awk '{print $1}' ${dir_pedes}/in_${pweek}_prompt.txt`
 
 #week=07
-#new=397143
-#old=396993
+new=401000
+old=400811
 
 if [ -f /eos/project/e/ecaltrg/www/DBPedestals/Pedes_${new}.db ]; then rm /eos/project/e/ecaltrg/www/DBPedestals/Pedes_${new}.db;fi
 
