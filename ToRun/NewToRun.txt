@@ -1,0 +1,5 @@
+week 15 
+year 2026
+run1 402667
+run2 402771
+type pedestal
