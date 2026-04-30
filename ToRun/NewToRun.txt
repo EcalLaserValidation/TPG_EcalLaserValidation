@@ -1,5 +1,0 @@
-week 18
-year 2026
-run1 403348
-run2 403392
-type laser
